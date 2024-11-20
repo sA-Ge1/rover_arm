@@ -1,0 +1,344 @@
+
+<robot
+  name="rover_arm_moveit">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 0 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.035343" />
+      <inertia
+        ixx="9.3511E-06"
+        ixy="0"
+        ixz="-2.5612E-38"
+        iyy="9.3511E-06"
+        iyz="1.1715E-37"
+        izz="3.9761E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-3.747E-15 0.0022773 0.077122"
+        rpy="0 0 0" />
+      <mass
+        value="0.41924" />
+      <inertia
+        ixx="0.0012798"
+        ixy="1.0757E-18"
+        ixz="9.3599E-19"
+        iyy="0.0015952"
+        iyz="3.9689E-19"
+        izz="0.00059701" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.00021988 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.2"
+      upper="3.2"
+      effort="10.5"
+      velocity="2.5" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-2.8588E-15 -0.046 0.275"
+        rpy="0 0 0" />
+      <mass
+        value="0.1914" />
+      <inertia
+        ixx="0.0046114"
+        ixy="2.0737E-19"
+        ixz="2.9287E-20"
+        iyy="0.0046708"
+        iyz="-3.3087E-22"
+        izz="5.9679E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.04872 0.16"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.2"
+      upper="3.2"
+      effort="10.5"
+      velocity="2.5" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.000814999246457893 -0.042709811887764 0.171512812855186"
+        rpy="0 0 0" />
+      <mass
+        value="0.334746404914452" />
+      <inertia
+        ixx="0.00101227160012089"
+        ixy="-1.0571975318945E-08"
+        ixz="-5.29394672439346E-07"
+        iyy="0.0011805187783924"
+        iyz="-1.54971874790944E-12"
+        izz="0.000248673620348846" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link3_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0035 0.55"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.2"
+      upper="3.2"
+      effort="10.5"
+      velocity="2.5" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="9.7368E-08 -0.00021194 0.064976"
+        rpy="0 0 0" />
+      <mass
+        value="0.20212" />
+      <inertia
+        ixx="0.0001735"
+        ixy="-5.5684E-08"
+        ixz="1.5788E-19"
+        iyy="0.0001153"
+        iyz="1.0151E-07"
+        izz="7.75E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_arm_moveit/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link4_joint"
+    type="revolute">
+    <origin
+      xyz="0.007 -0.043 0.3523"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.2"
+      upper="3.2"
+      effort="10.5"
+      velocity="2.5" />
+  </joint>
+  <link name="ee_link">
+    <inertial>
+      <origin xyz="-5.2708E-14 1.4855E-13 -0.067388" rpy="0 0 0" />
+      <mass value="0.0068368" />
+      <inertia ixx="1.007E-05" ixy="-4.9293E-23" ixz="-2.6959E-20" iyy="1.007E-05" iyz="-1.8013E-20" izz="6.7149E-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_arm_moveit/meshes/ee_link.STL" />
+      </geometry>
+      <material name=""><color rgba="0.79216 0.81961 0.93333 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_arm_moveit/meshes/ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="ee_joint" type="fixed">
+    <origin xyz="0 0 0.0965" rpy="0 0 0" />
+    <parent link="link4" />
+    <child link="ee_link" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0" effort="10" velocity="0" />
+  </joint>
+
+  <!-- Rotational Joints for End Effector -->
+
+  <link name="ee_rotation_x" />
+  <joint name="ee_rotation_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="ee_link" />
+    <child link="ee_rotation_x" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="5" velocity="1" />
+  </joint>
+
+  <link name="ee_rotation_y" />
+  <joint name="ee_rotation_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="ee_rotation_x" />
+    <child link="ee_rotation_y" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="5" velocity="1" />
+  </joint>
+
+  <link name="ee_rotation_z" />
+  <joint name="ee_rotation_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="ee_rotation_y" />
+    <child link="ee_rotation_z" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="5" velocity="1" />
+  </joint>
+
+  <!-- Final End Effector Link -->
+
+  <link name="robot_ee" />
+  <joint name="robot_ee_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="ee_rotation_z" />
+    <child link="robot_ee" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+</robot>
